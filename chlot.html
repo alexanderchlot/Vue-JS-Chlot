@@ -10,13 +10,25 @@
 <body>
   <div id="app">
     <h1>{{msg}}</h1>
+    <a v-bind:href="url">Home</a>
+    <p>
+    <form method="post" action="/">
+      <label for="email">Email </label><input type="email" v-model="email" id="email">
+      <p>Your Email {{email}}</p>
+        <label for="name">What's your Name?</label><input type="text" v-model="firstName" placeholder=" Name">
+      <p>Your Name {{firstName}}</p>
+    </form>
+    </p>
   </div>
 
 <script>
-  new Vue({
+  var vm = new Vue({
     el: '#app',
       data: {
-      msg: 'Chlot'
+          msg: 'Chlot',
+          url: 'https://www.google.com/',
+          email: '',
+          firstName: ''
       }
   });
 </script>
