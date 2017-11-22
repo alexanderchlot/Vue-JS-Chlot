@@ -15,8 +15,29 @@
     <form method="post" action="/">
       <label for="email">Email </label><input type="email" v-model="email" id="email">
       <p>Your Email {{email}}</p>
-        <label for="name">What's your Name?</label><input type="text" v-model="firstName" placeholder=" Name">
-      <p>Your Name {{firstName}}</p>
+        <label for="name">What's your Name? </label><input type="text" v-model="firstName" placeholder=" Name">
+      <p>Your Name{{firstName}}</p>
+
+      <legend>Your Favourite Artist</legend>
+      <div>
+        <input type="checkbox" v-model="selectedBand" value="Interpol"> Interpol
+      </div>
+      <div>
+        <input type="checkbox" v-model="selectedBand" value="Editors"> Editors
+      </div>
+      <div>
+        <input type="checkbox" v-model="selectedBand" value="White Lies"> White Lies
+      </div>
+      <div>
+        <input type="checkbox" v-model="selectedBand" value="Drab Majesty"> Drab Majesty
+      </div>
+      <div>
+        <input type="checkbox" v-model="selectedBand" value="The Cure"> The Cure
+      </div>
+      <div>
+        <input type="checkbox" v-model="selectedBand" value="The Smiths"> The Smiths
+      </div>
+      <p>You selected: {{selectedBand.join(', ')}}</p>
     </form>
     </p>
   </div>
@@ -28,7 +49,8 @@
           msg: 'Chlot',
           url: 'https://www.google.com/',
           email: '',
-          firstName: ''
+          firstName: '',
+          selectedBand: []
       }
   });
 </script>
